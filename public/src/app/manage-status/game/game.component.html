@@ -1,0 +1,27 @@
+<h3>Player Status - Game {{gameNum}}</h3>
+<ul>
+    <li><a [routerLink]="['/status/game/1']">Game 1</a></li>
+    <li><a [routerLink]="['/status/game/2']">Game 2</a></li>
+    <li><a [routerLink]="['/status/game/3']">Game 3</a></li>
+</ul>
+<div>
+    <table>
+      <thead>
+          <th>Player Name</th>
+          <th>Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngFor='let player of players'>
+            <td>{{ player.name }}</td>
+            <td>
+                <button [ngClass]="{'selectedp': player.status[gameNum - 1] == 'playing'}"
+                    (click)='status(player._id, gameNum, "playing")'>Playing</button>
+                <button [ngClass]="{'selectednp': player.status[gameNum - 1] == 'not playing'}"
+                    (click)='status(player._id, gameNum, "not playing")'>Not Playing</button>
+                <button [ngClass]="{'selectedu': player.status[gameNum - 1] == 'undecided'}"
+                    (click)='status(player._id, gameNum, "undecided")'>Undecided</button>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+</div>

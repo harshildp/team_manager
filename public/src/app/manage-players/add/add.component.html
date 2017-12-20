@@ -1,0 +1,21 @@
+<h3>Add a new player</h3>
+<form (submit)='add()' #formData='ngForm'>
+  <input
+    type="text"
+    name="name"
+    required
+    minlength="2"
+    placeholder='Player name'
+    [(ngModel)]="newPlayer.name"
+    #name='ngModel'
+  >
+  <input
+    type="text"
+    name="position"
+    placeholder='Position (optional)'
+    [(ngModel)]="newPlayer.position"
+    #position='ngModel'
+  >
+  <button type='submit' [disabled]="!formData.valid">Add Player</button>
+</form>
+<small *ngIf='!name.valid && !name.untouched'>Name must have 2 characters!</small>

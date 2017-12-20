@@ -1,0 +1,35 @@
+.selectedu{
+    background-color:darkgoldenrod;
+    color:white;    
+}
+.selectedp{
+    background-color:darkgreen;
+    color:white;
+}
+.selectednp{
+    background-color:maroon;
+    color:white;
+}
+table {
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid black;
+    text-align:center;
+    padding:5px;
+}
+li{
+    display:inline-block;
+    border-left:1px solid black;
+    padding-left:20px;
+}
+ul :first-child{
+    border:none;
+    margin-right:10px;
+    padding:0;
+}
+button {
+    border:none;
+    padding:5px;
+    border-radius: 8px;
+}
